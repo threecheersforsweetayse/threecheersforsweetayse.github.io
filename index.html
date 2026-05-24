@@ -30,13 +30,20 @@
                     </div>
                 </div>
 
+                <div class="media-visualizer-box">
+                    <div class="image-placeholder">
+                        <img id="visualizer-image" src="https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&w=400&q=80" alt="Medical Graphic Display">
+                        <p class="caption">fig_01_cardiovascular_map.png</p>
+                    </div>
+                </div>
+
                 <div class="playlist-section">
                     <h3 class="panel-header">case_study_archive.pla</h3>
                     <ul class="track-list">
-                        <li class="track active">01_fibrodysplasia_ossificans.med</li>
-                        <li class="track">02_the_1918_influenza_strain.virus</li>
-                        <li class="track">03_xenotransplantation_bounds.repo</li>
-                        <li class="track">04_kuru_prion_mechanisms.neuro</li>
+                        <li class="track active" id="track1">01_fibrodysplasia_ossificans.med</li>
+                        <li class="track" id="track2">02_the_1918_influenza_strain.virus</li>
+                        <li class="track" id="track3">03_xenotransplantation_bounds.repo</li>
+                        <li class="track" id="track4">04_kuru_prion_mechanisms.neuro</li>
                     </ul>
                 </div>
 
@@ -53,10 +60,10 @@
                         </div>
 
                         <div class="options-container">
-                            <button class="game-btn">a) relating to a nerve cell</button>
-                            <button class="game-btn">b) denotes a red color state</button>
-                            <button class="game-btn">c) inflammation of a joint</button>
-                            <button class="game-btn">d) fluid buildup in tissue</button>
+                            <button class="game-btn" id="opt-a">a) relating to a nerve cell</button>
+                            <button class="game-btn" id="opt-b">b) denotes a red color state</button>
+                            <button class="game-btn" id="opt-c">c) inflammation of a joint</button>
+                            <button class="game-btn" id="opt-d">d) fluid buildup in tissue</button>
                         </div>
 
                         <div class="score-board">
@@ -72,9 +79,9 @@
 
         <div class="player-bottom-bar">
             <div class="media-buttons">
-                <button class="ctrl-btn">⏮</button>
-                <button class="play-btn">▶</button>
-                <button class="ctrl-btn">⏭</button>
+                <button class="ctrl-btn" id="prevBtn">⏮</button>
+                <button class="play-btn" id="playPauseBtn">▶</button>
+                <button class="ctrl-btn" id="nextBtn">⏭</button>
             </div>
             <div class="progress-bar-container">
                 <div class="progress-bar"></div>
@@ -83,5 +90,6 @@
 
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
