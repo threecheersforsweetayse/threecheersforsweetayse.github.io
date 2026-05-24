@@ -1,8 +1,8 @@
-/* 1. The Background - Pure Black & Retro Font */
+/* 1. The Background - Deepest Emo Black */
 body {
-    background-color: #000000;
-    color: #FFFFFF;
-    font-family: "Courier New", Courier, monospace;
+    background-color: #0b0c10; /* Pitch dark slate black */
+    color: #c5c6c7;            /* Muted, cold silver text */
+    font-family: "Courier New", Courier, monospace; /* Sharp retro font */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,32 +10,33 @@ body {
     margin: 0;
 }
 
-/* 2. The Main App Box */
+/* 2. The Main Container Box (The Profile Box) */
 .app {
-    background-color: #111111;
-    border: 3px double #00FFFF; /* Classic neon cyan double border */
+    background-color: #1f2833; /* Dark icy charcoal gray */
+    border: 2px solid #660708;  /* Deep, bruised vampire-cherry red border */
     padding: 30px;
     text-align: center;
-    box-shadow: 0px 0px 15px #00FFFF; /* Glowing neon effect */
+    box-shadow: 0px 0px 20px #000000; /* Heavy, dark shadow underneath */
     width: 300px;
 }
 
-/* 3. The Custom MySpace-Core Button */
+/* 3. The Custom Emo Button */
 #testBtn {
-    background-color: #000000;
-    color: #FF007F; /* Hot electric pink text */
-    border: 1px solid #FF007F;
+    background-color: #0b0c10; /* Black button background */
+    color: #ba181b;            /* Deep cherry red text */
+    border: 1px solid #660708; /* Dark red outline */
     font-family: "Courier New", Courier, monospace;
     font-weight: bold;
     padding: 10px 20px;
     cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    text-transform: lowercase; /* In 2007, typing in all lowercase was peak emo aesthetic */
+    letter-spacing: 1px;
 }
 
-/* Button Hover Effect (When you point your mouse at it) */
+/* Button Hover Effect (Flashes Frost Blue when hovered) */
 #testBtn:hover {
-    background-color: #FF007F;
-    color: #000000;
-    box-shadow: 0px 0px 10px #FF007F;
+    background-color: #ba181b; /* Turns deep red */
+    color: #ffffff;            /* White text */
+    border-color: #a8dadc;     /* Pops with a sharp, pale ice-blue border */
+    box-shadow: 0px 0px 10px #ba181b; /* Deep red neon glow */
 }
