@@ -1,16 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Med Diary</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Literacy Portal</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="app">
-        <div class="title"></div>
-        <button id="testBtn">Button</button>
+
+    <div class="player-container">
+        
+        <div class="player-top-bar">
+            <span class="player-title">Windows Media Player</span>
+            <div class="player-window-controls">
+                <span>—</span>
+                <span>❑</span>
+                <span class="close-btn">X</span>
+            </div>
+        </div>
+
+        <div class="player-main-layout">
+            
+            <div class="left-panel">
+                
+                <div class="fact-screen">
+                    <h2 class="section-title">NOW PLAYING: WEEKLY FACT</h2>
+                    <div id="fact-content">
+                        <p class="fact-text">Loading medical database... Did you know that the human heart pumps roughly 2,000 gallons of blood every single day through a network of vessels spanning 60,000 miles?</p>
+                    </div>
+                </div>
+
+                <div class="playlist-section">
+                    <h3 class="panel-header">case_study_archive.pla</h3>
+                    <ul class="track-list">
+                        <li class="track active">01_fibrodysplasia_ossificans.med</li>
+                        <li class="track">02_the_1918_influenza_strain.virus</li>
+                        <li class="track">03_xenotransplantation_bounds.repo</li>
+                        <li class="track">04_kuru_prion_mechanisms.neuro</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="right-panel">
+                <div class="game-box">
+                    <h2 class="section-title">MED_VOCAB_GAME.EXE</h2>
+                    
+                    <div class="game-card">
+                        <div class="question-container">
+                            <p class="prefix-term">root word: <span id="current-term">"erythro-"</span></p>
+                            <p class="instruction">select the correct clinical definition:</p>
+                        </div>
+
+                        <div class="options-container">
+                            <button class="game-btn">a) relating to a nerve cell</button>
+                            <button class="game-btn">b) denotes a red color state</button>
+                            <button class="game-btn">c) inflammation of a joint</button>
+                            <button class="game-btn">d) fluid buildup in tissue</button>
+                        </div>
+
+                        <div class="score-board">
+                            <span>score: <span id="score-val">00</span></span>
+                            <span>streak: <span id="streak-val">00</span></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="player-bottom-bar">
+            <div class="media-buttons">
+                <button class="ctrl-btn">⏮</button>
+                <button class="play-btn">▶</button>
+                <button class="ctrl-btn">⏭</button>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+
     </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
