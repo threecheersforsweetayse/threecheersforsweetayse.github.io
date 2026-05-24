@@ -1,0 +1,41 @@
+/* 1. The Background - Pure Black & Retro Font */
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: "Courier New", Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 2. The Main App Box */
+.app {
+    background-color: #111111;
+    border: 3px double #00FFFF; /* Classic neon cyan double border */
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0px 0px 15px #00FFFF; /* Glowing neon effect */
+    width: 300px;
+}
+
+/* 3. The Custom MySpace-Core Button */
+#testBtn {
+    background-color: #000000;
+    color: #FF007F; /* Hot electric pink text */
+    border: 1px solid #FF007F;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Button Hover Effect (When you point your mouse at it) */
+#testBtn:hover {
+    background-color: #FF007F;
+    color: #000000;
+    box-shadow: 0px 0px 10px #FF007F;
+}
