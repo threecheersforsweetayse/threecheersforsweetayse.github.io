@@ -72,7 +72,6 @@ body {
     height: 100%;       /* Forces image to stretch to the exact height of the box */
     object-fit: cover;  /* Crops the image perfectly center without squishing the dimensions */
 }
-}
 
 .placeholder-graphic {
     color: #660708;
