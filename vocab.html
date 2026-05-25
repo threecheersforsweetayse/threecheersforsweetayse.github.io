@@ -127,23 +127,403 @@
 
     <script>
         // Here is your question bank array! You can add more questions to this list anytime.
+// Expanded Medical Vocabulary Database Array
         const quizDatabase = [
             {
-                definition: "Relating to or affecting the liver; the primary physiological filtering system of the human body.",
-                choices: ["Cardiovascular", "Hepatic", "Renal", "Pulmonary"],
-                correct: 1 // Points to "Hepatic" (0=Cardiovascular, 1=Hepatic, 2=Renal, 3=Pulmonary)
+                definition: "A chemical that changes the sex hormone testosterone into a substance called dihydrotestosterone, which can cause the prostate gland to grow abnormally.",
+                choices: ["5-alpha reductase", "Alpha cells", "Acetylcholine", "Aldosterone"],
+                correct: 0
             },
             {
-                definition: "The temporary or permanent restoration of tissue structure and physiological function following traumatic removal or damage.",
-                choices: ["Regeneration", "Atrophy", "Necrosis", "Sclerosis"],
-                correct: 0 // Points to "Regeneration"
+                definition: "A flat sheet of muscles on the front of the abdomen, located between the ribcage and the pelvis.",
+                choices: ["Antagonist muscles", "Abdominal muscles", "Arrector pili", "Actin"],
+                correct: 1
             },
             {
-                definition: "Pertaining to the heart and the network of blood vessels responsible for systematic circulation pressure mechanics.",
-                choices: ["Gastric", "Neurological", "Cardiovascular", "Dermatological"],
-                correct: 2 // Points to "Cardiovascular"
-            }
-        ];
+                definition: "A procedure to remove excess abdominal skin and tighten the underlying stomach muscles; commonly known as a tummy tuck.",
+                choices: ["Angioplasty", "Arthroplasty", "Abdominoplasty", "Ablation"],
+                correct: 2
+            },
+            {
+                definition: "Movement of a body part, such as an arm or leg, away from the center or midline of the body.",
+                choices: ["Adduction", "Abduction", "Flexion", "Ataxia"],
+                correct: 1
+            },
+            {
+                definition: "A form of treatment that uses electrical energy, heat, cold, alcohol, or other modalities to destroy a small section of damaged tissue.",
+                choices: ["Ablation", "Abrasion", "Amputation", "Arthrocentesis"],
+                correct: 0
+            },
+            {
+                definition: "A scraping or rubbing away of the skin or another epithelial surface.",
+                choices: ["Abscess", "Acne", "Abrasion", "Actinic keratosis"],
+                correct: 2
+            },
+            {
+                definition: "Pus that collects in a confined pocket of swollen, red tissue, frequently occurring on the surface of the skin.",
+                choices: ["Atheroma", "Abscess", "Adhesion", "Adenoma"],
+                correct: 1
+            },
+            {
+                definition: "A natural tooth or structural implant to which a fixed dental prosthesis is firmly anchored.",
+                choices: ["Abutment", "Acetabulum", "Annulus", "Atlas"],
+                correct: 0
+            },
+            {
+                definition: "Psychotherapy techniques that use mindfulness to help a person recognize and accept thoughts and feelings without being controlled by them.",
+                choices: ["Cognitive behavioral therapy", "Acceptance-based therapies", "Active surveillance", "Adult day services"],
+                correct: 1
+            },
+            {
+                definition: "The specialized physiological ability of the eye's lens to adjust focus on objects that are close up.",
+                choices: ["Astigmatism", "Aura", "Agnosia", "Accommodation"],
+                correct: 3
+            },
+            {
+                definition: "Abbreviation for angiotensin-converting enzyme, which converts the inactive protein angiotensin I to its active vasoconstricting form.",
+                choices: ["ATP", "ACE", "AMD", "ARB"],
+                correct: 1
+            },
+            {
+                definition: "A drug class used to treat high blood pressure and congestive heart failure by blocking the production of angiotensin II.",
+                choices: ["Beta blockers", "Alpha blockers", "ACE inhibitor", "Anticonvulsants"],
+                correct: 2
+            },
+            {
+                definition: "A curved, bowl-shaped depression in the outer hipbone where the ball-shaped top of the thighbone fits to form the hip joint.",
+                choices: ["Acetabulum", "Acromioclavicular joint", "Alveolar bone", "Axis"],
+                correct: 0
+            },
+            {
+                definition: "The toxic main breakdown product of alcohol metabolism; accumulation in the bloodstream produces flushing and vomiting.",
+                choices: ["Albumin", "Acetaldehyde", "Acetaminophen", "Amylase"],
+                correct: 1
+            },
+            {
+                definition: "A common over-the-counter drug used to reduce fever and relieve mild pain, which lacks anti-inflammatory properties.",
+                choices: ["Aspirin", "Acetaminophen", "Alendronate", "Benzodiazepines"],
+                correct: 1
+            },
+            {
+                definition: "A critical chemical neurotransmitter that sends signals between brain cells to regulate attention, learning, and memory.",
+                choices: ["Acetylcholine", "Adrenaline", "Angiotensin", "Apolipoproteins"],
+                correct: 0
+            },
+            {
+                definition: "A strong band of dense connective tissue that securely anchors the calf muscle to the heel bone.",
+                choices: ["Annulus fibrosus", "Achilles’ tendon", "Articular cartilage", "Articular processes"],
+                correct: 1
+            },
+            {
+                definition: "A condition in which the stomach produces little or no gastric acid, severely hindering digestion and nutrient absorption.",
+                choices: ["Achlorhydria", "Anorexia", "Aerophagia", "Anorectal dysfunction"],
+                correct: 0
+            },
+            {
+                definition: "An inflammatory skin disease resulting from excess sebum production, plugged hair follicles, and increased bacterial colonization.",
+                choices: ["Albinism", "Actinic keratosis", "Acne", "Atopic dermatitis"],
+                correct: 2
+            },
+            {
+                definition: "The advanced stage of HIV infection that severely weakens the immune system, making patients vulnerable to opportunistic infections.",
+                choices: ["AIDS", "AMD", "BPH", "GERD"],
+                correct: 0
+            },
+            {
+                definition: "The neurological term given to the brain's baseline absorption of new information to begin creating a memory trace.",
+                choices: ["Arousal", "Acquisition", "Agnosia", "Apraxia"],
+                correct: 1
+            },
+            {
+                definition: "The structural shoulder joint that directly connects the clavicle to the scapula bone.",
+                choices: ["Acromioclavicular joint", "Acetabulum", "Ankle-brachial index", "Atlas"],
+                correct: 0
+            },
+            {
+                definition: "One of the essential structural proteins that allows human cells to move and muscle fibers to contract.",
+                choices: ["Albumin", "Amyloid", "Actin", "Amylase"],
+                correct: 2
+            },
+            {
+                definition: "Scaly pink or red-brown raised spots on the skin caused by overexposure to the sun; a known precursor to skin cancer.",
+                choices: ["Basal cell carcinoma", "Actinic keratosis", "Alopecia areata", "Astringent"],
+                correct: 1
+            },
+            {
+                definition: "A clinical management strategy for early prostate cancer involving regular checkups without treatment until tracking signs worsen.",
+                choices: ["Active surveillance", "Adjuvant therapy", "Adult day services", "Assisted living"],
+                correct: 0
+            },
+            {
+                definition: "Using the thumb or fingers to apply physical pressure to particular points on the body to relieve localized pain.",
+                choices: ["Acupuncture", "Acupressure", "Arthroscopy", "Arthrocentesis"],
+                correct: 1
+            },
+            {
+                definition: "A clinical practice based on Chinese medicine where thin needles are inserted into the skin at specific points to treat pain and stress.",
+                choices: ["Acupressure", "Acupuncture", "Ablation", "Arthrodesis"],
+                correct: 1
+            },
+            {
+                definition: "A medical condition or state that comes on suddenly, often presenting severe but short-lived symptoms.",
+                choices: ["Chronic", "Acute", "Asymptomatic", "Ambulatory"],
+                correct: 1
+            },
+            {
+                definition: "Severe, sharp physical discomfort that occurs suddenly and usually lasts for only a brief period of time.",
+                choices: ["Acute pain", "Chronic pain", "Allodynia", "Analgesia"],
+                correct: 0
+            },
+            {
+                definition: "A sudden, painful inability to empty the urinary bladder, often caused by an enlarged prostate gland or muscle issues.",
+                choices: ["Acute urinary retention", "Anorectal dysfunction", "Achlorhydria", "Albuminuria"],
+                correct: 0
+            },
+            {
+                definition: "The operational ability of an organism to change genetically over generations to deal better with environmental conditions.",
+                choices: ["Adaptability", "Adaptive immunity", "Atopy", "Acacquisition"],
+                correct: 0
+            },
+            {
+                definition: "The specialized capability of the human body to learn to fight specific pathogenetic infections after initial germ exposure.",
+                choices: ["Adaptive immunity", "Innate immunity", "Allergic rhinitis", "Autoimmune response"],
+                correct: 0
+            },
+            {
+                definition: "Loss of behavioral control over indulging in a substance or action, characterized by continuous craving despite negative consequences.",
+                choices: ["Agnosia", "Addiction", "Apraxia", "Arousal"],
+                correct: 1
+            },
+            {
+                definition: "The physiological movement of a skeletal body part toward or directly across the median longitudinal midline axis.",
+                choices: ["Abduction", "Adduction", "Ataxia", "Asystole"],
+                correct: 1
+            },
+            {
+                definition: "A specific classification of cancer that originates and grows in the epithelial tissue layer lining inner protective organs.",
+                choices: ["Adenocarcinoma", "Adenoma", "Basal cell carcinoma", "Atheroma"],
+                correct: 0
+            },
+            {
+                definition: "A benign, non-cancerous growth found in the layer of cells that lines certain internal organs.",
+                choices: ["Adenocarcinoma", "Adenoma", "Abscess", "Atherosclerotic plaque"],
+                correct: 1
+            },
+            {
+                definition: "An energy-storing nucleotide molecule found in all human cells that acts as primary cellular fuel currency.",
+                choices: ["ACE", "ATP", "APP", "ARB"],
+                correct: 1
+            },
+            {
+                definition: "An estimate of the amount of a nutrient needed by healthy people when insufficient scientific data exists to set an RDA.",
+                choices: ["Adequate intake", "Baseline EKG", "Analytic variability", "Adulterant"],
+                correct: 0
+            },
+            {
+                definition: "A dynamic band of internal scar-like tissue that pathologically connects body surfaces or organs that are normally separate.",
+                choices: ["Adhesion", "Annulus", "Achilles’ tendon", "Abutment"],
+                correct: 0
+            },
+            {
+                definition: "Anatomical connective tissue that is specialized for the storage of fat within cellular structures.",
+                choices: ["Adipose tissue", "Articular cartilage", "Epithelium", "Alveolar bone"],
+                correct: 0
+            },
+            {
+                definition: "Extra therapy given after a primary treatment (like chemotherapy after surgery) to maximize overall clinical effectiveness.",
+                choices: ["Active surveillance", "Adjuvant therapy", "Acceptance-based therapies", "Autologous transplant"],
+                correct: 1
+            },
+            {
+                definition: "Endocrine glands that sit directly on top of each kidney and specialize in secreting essential stress hormones.",
+                choices: ["Adrenal glands", "Alpha cells", "Basal ganglia", "Thymus"],
+                correct: 0
+            },
+            {
+                definition: "An endocrine stress hormone that accelerates heart rate, speeds breathing, and increases blood pressure; also called epinephrine.",
+                choices: ["Acetylcholine", "Aldosterone", "Adrenaline", "Angiotensin"],
+                correct: 2
+            },
+            {
+                definition: "Professional facilities providing structured daytime supervision, social support, or assistance to functional adults.",
+                choices: ["Adult day services", "Assisted living", "Advance care directive", "Bereavement"],
+                correct: 0
+            },
+            {
+                definition: "An unwanted ingredient in a medicinal product that dilutes its purity without contributing to therapeutic efficacy.",
+                choices: ["Antioxidant", "Adulterant", "Antiseptic", "Analgesic"],
+                correct: 1
+            },
+            {
+                definition: "A legal document describing the specific medical care a person desires if an accident leaves them unable to communicate.",
+                choices: ["Advance care directive", "Active surveillance", "Baseline EKG", "Analytical record"],
+                correct: 0
+            },
+            {
+                definition: "A progressive sleep disorder pattern characterized by falling asleep and waking up much earlier than desired.",
+                choices: ["Advanced sleep phase syndrome", "Alpha-delta sleep", "Apnea", "Arousal state"],
+                correct: 0
+            },
+            {
+                definition: "Any metabolic process, cellular environment, or physical exercise routine that strictly requires the utilization of oxygen.",
+                choices: ["Anaerobic", "Aerobic", "Asystole", "Aspiration"],
+                correct: 1
+            },
+            {
+                definition: "Sustained physical activity that speeds breathing and optimizes cardiorespiratory performance; examples include running or cycling.",
+                choices: ["Aerobic exercise", "Anaerobic exercise", "Abduction", "Acupressure"],
+                correct: 0
+            },
+            {
+                definition: "The involuntary or excessive swallowing of air, often leading to gastric discomfort and bloating.",
+                choices: ["Achlorhydria", "Aerophagia", "Asphyxia", "Aspiration"],
+                correct: 1
+            },
+            {
+                definition: "A licensed skin care professional who performs procedures like cleansing, chemical peels, and microdermabrasion.",
+                choices: ["Audiologist", "Aesthetician", "Dermatologist", "Physiotherapist"],
+                correct: 1
+            },
+            {
+                definition: "The clouding of the protective lens structure of the eye that can occur months or years following primary cataract surgery.",
+                choices: ["After-cataract", "Astigmatism", "Age-related macular degeneration", "Amblyopia"],
+                correct: 0
+            },
+            {
+                definition: "The mild loss of short-term memory and typical slowing of brain information processing that accompanies normal aging.",
+                choices: ["Alzheimer's disease", "Age-related cognitive decline", "Agnosia", "Aphasia"],
+                correct: 1
+            },
+            {
+                definition: "A serious, potentially blinding ophthalmic condition that progressively destroys sharp, central vision capabilities.",
+                choices: ["After-cataract", "Astigmatism", "Age-related macular degeneration", "Amsler grid"],
+                correct: 2
+            },
+            {
+                definition: "A rare neurological condition characterized by a total or partial inability to recognize familiar objects, shapes, or people.",
+                choices: ["Aphasia", "Agnosia", "Apraxia", "Amnesia"],
+                correct: 1
+            },
+            {
+                definition: "A substance that triggers a physiological cellular response when it successfully binds with a target biological receptor.",
+                choices: ["Antagonist", "Agonist", "Antibody", "Antigen"],
+                correct: 1
+            },
+            {
+                definition: "An anxiety disorder characterized by an intense fear and structural avoidance of public places or wide open spaces.",
+                choices: ["Agoraphobia", "Agnosia", "Apraxia", "Aura"],
+                correct: 0
+            },
+            {
+                definition: "A rapid, devastating loss of cognitive brain function occurring in some HIV patients, marked by extreme forgetfulness.",
+                choices: ["Alzheimer's disease", "AIDS dementia", "Aphasia", "Agnosia"],
+                correct: 1
+            },
+            {
+                definition: "A cluster of inherited genetic conditions that manifest as a severe reduction or total absence of protective melanin pigments.",
+                choices: ["Albinism", "Alopecia areata", "Actinic keratosis", "Actin"],
+                correct: 0
+            },
+            {
+                definition: "A major plasma protein synthesized by the liver; abnormal blood levels can indicate underlying hepatic or renal disease.",
+                choices: ["Amylase", "Albumin", "Actin", "Hemoglobin"],
+                correct: 1
+            },
+            {
+                definition: "The pathological presence of high amounts of liver-generated albumin protein within the excreted urine stream.",
+                choices: ["Achlorhydria", "Albuminuria", "Aerophagia", "Anorectal dysfunction"],
+                correct: 1
+            },
+            {
+                definition: "The continuing consumption of intoxicating alcohol products despite recurrent alcohol-related social or interpersonal problems.",
+                choices: ["Alcohol abuse", "Alcohol dependence", "Alcoholism", "Addiction"],
+                correct: 0
+            },
+            {
+                definition: "A critical liver enzyme that metabolizes ethanol into toxic, flushing-inducing acetaldehyde.",
+                choices: ["Amylase", "Alcohol dehydrogenase", "Angiotensin-converting enzyme", "5-alpha reductase"],
+                correct: 1
+            },
+            {
+                definition: "A chronic, progressive disease marked by compulsive drinking, impaired control, and physiological withdrawal symptoms.",
+                choices: ["Alcohol abuse", "Alcohol dependence", "Achlorhydria", "Agoraphobia"],
+                correct: 1
+            },
+            {
+                definition: "Another term for alcohol dependence: A chronic, progressive disease characterized by compulsive drinking and withdrawal symptoms.",
+                choices: ["Alcohol abuse", "Alcoholism", "Addiction", "Agnosia"],
+                correct: 1
+            },
+            {
+                definition: "A steroid hormone secreted by the adrenal cortex that regulates blood pressure by controlling sodium and potassium retention.",
+                choices: ["Adrenaline", "Aldosterone", "Acetylcholine", "Angiotensin"],
+                correct: 1
+            },
+            {
+                definition: "A specialized prescription drug used to treat and prevent osteoporosis by slowing down down-regulated bone loss loops.",
+                choices: ["Alendronate", "Acetaminophen", "Aspirin", "Benzodiazepines"],
+                correct: 0
+            },
+            {
+                definition: "Another anatomical term used to reference the entire human gastrointestinal, or digestive, tract.",
+                choices: ["Alimentary canal", "Anal canal", "Abdominal muscles", "Acetabulum"],
+                correct: 0
+            },
+            {
+                definition: "One of two or more alternative versions of a specific gene that produces variations in inherited characteristics.",
+                choices: ["Allele", "Axon", "Amyloid", "Actin"],
+                correct: 0
+            },
+            {
+                definition: "A structural substance (such as fur, pollen, or dust) that produces an immediate hypersensitive allergic reaction.",
+                choices: ["Antibody", "Allergen", "Antigen", "Adulterant"],
+                correct: 1
+            },
+            {
+                definition: "A seasonal or year-round condition marked by sneezing and congestion, caused by an IgE-mediated immune response to allergens.",
+                choices: ["Asthma", "Allergic rhinitis", "Achlorhydria", "Atopic dermatitis"],
+                correct: 1
+            },
+            {
+                definition: "Pain hypersensitivity resulting from exposure to a stimulus that does not normally provoke painful sensations, like a light touch.",
+                choices: ["Analgesia", "Allodynia", "Acute pain", "Aura"],
+                correct: 1
+            },
+            {
+                definition: "An autoimmune dermatological condition that appears as patchy, non-scarring hair loss on the scalp area.",
+                choices: ["Androgenetic alopecia", "Alopecia areata", "Alopecia totalis", "Alopecia universalis"],
+                correct: 1
+            },
+            {
+                definition: "A complete loss of hair that characteristically involves the entire area of the human scalp.",
+                choices: ["Alopecia areata", "Alopecia totalis", "Alopecia universalis", "Androgenetic alopecia"],
+                correct: 1
+            },
+            {
+                definition: "An advanced state of total hair loss that fully involves the entire human body surface.",
+                choices: ["Alopecia areata", "Alopecia totalis", "Alopecia universalis", "Albinism"],
+                correct: 2
+            },
+            {
+                definition: "A group of drugs that lower blood pressure and treat prostate issues by blocking adrenaline action on cellular alpha receptors.",
+                choices: ["Beta blockers", "Alpha blockers", "ACE inhibitors", "Anticoagulants"],
+                correct: 1
+            },
+            {
+                definition: "Specialized endocrine cells located within the pancreas that synthesize and secrete the hormone glucagon.",
+                choices: ["Alpha cells", "B cells", "T cells", "Leukocytes"],
+                correct: 0
+            },
+            {
+                definition: "Fruit-derived chemical organic acids used topically in skin creams to act as skin exfoliants.",
+                choices: ["Alpha hydroxy acids", "Alpha waves", "Astringents", "Adulterants"],
+                correct: 0
+            },
+            {
+                definition: "A type of rhythmic brain wave generated when a person is relaxed, awake, and receiving zero active visual input.",
+                choices: ["Delta waves", "Beta waves", "Alpha waves", "Theta waves"],
+                correct: 2
+            },
 
         let currentQuestionIndex = 0;
 
