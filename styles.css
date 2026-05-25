@@ -137,8 +137,7 @@ body {
 
 .menu-btn {
     background: linear-gradient(180deg, #4a0000, #250000); /* Vampire red gradient look */
-    border: none;
-    border-right: 1px solid #660708; /* Border separator line between individual tabs */
+    border-right: 1px solid #660708; /* Border separator line between tabs */
     color: #ffffff;
     font-family: "Courier New", Courier, monospace;
     font-size: 12px;
@@ -147,6 +146,16 @@ body {
     text-transform: lowercase; /* Keeps it strictly retro MySpace-coded */
     letter-spacing: 1px;
     transition: background 0.2s;
+    
+    /* THE TRUE FIXES FOR UNIFORM LAYOUT: */
+    display: flex;          /* Uses flexbox layout engine inside the button */
+    justify-content: center;/* Centers text horizontally inside the button */
+    align-items: center;    /* Centers text vertically inside the button */
+    text-decoration: none;  /* STRIPS THE BLUE UNDERLINE PERMANENTLY */
+    width: 100%;            /* Forces each button to stretch and fill its 1/4 slot */
+    height: 100%;           /* Ensures they match up to the top border cleanly */
+    box-sizing: border-box; /* Makes sure borders don't push buttons out of alignment */
+}
     
     /* THE FIXES TO FORCE THE ANCHOR TO SHOW UP: */
     display: block;         /* Forces the <a> tag to behave like a solid block box */
