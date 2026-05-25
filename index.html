@@ -3,93 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical Literacy Portal</title>
+    <title>Med Diary Portal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="player-container">
+    <div class="player-frame">
         
-        <div class="player-top-bar">
-            <span class="player-title">Windows Media Player</span>
-            <div class="player-window-controls">
+        <div class="player-title-bar">
+            <span class="title-text">MED DIARY TERMINAL</span>
+            <div class="window-controls">
                 <span>—</span>
                 <span>❑</span>
-                <span class="close-btn">X</span>
+                <span>X</span>
             </div>
         </div>
 
-        <div class="player-main-layout">
+        <div class="layout-row-top">
             
-            <div class="left-panel">
-                
-                <div class="fact-screen">
-                    <h2 class="section-title">NOW PLAYING: WEEKLY FACT</h2>
-                    <div id="fact-content">
-                        <p class="fact-text">Loading medical database... Did you know that the human heart pumps roughly 2,000 gallons of blood every single day through a network of vessels spanning 60,000 miles?</p>
-                    </div>
+            <div class="visual-panel">
+                <div class="image-box">
+                    <p class="placeholder-graphic">[ ANATOMICAL GRAPHIC DISPLAY ]</p>
                 </div>
-
-                <div class="media-visualizer-box">
-                    <div class="image-placeholder">
-                        <img id="visualizer-image" src="https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&w=400&q=80" alt="Medical Graphic Display">
-                        <p class="caption">fig_01_cardiovascular_map.png</p>
-                    </div>
-                </div>
-
-                <div class="playlist-section">
-                    <h3 class="panel-header">case_study_archive.pla</h3>
-                    <ul class="track-list">
-                        <li class="track active" id="track1">01_fibrodysplasia_ossificans.med</li>
-                        <li class="track" id="track2">02_the_1918_influenza_strain.virus</li>
-                        <li class="track" id="track3">03_xenotransplantation_bounds.repo</li>
-                        <li class="track" id="track4">04_kuru_prion_mechanisms.neuro</li>
-                    </ul>
-                </div>
-
+                <div class="panel-sublinks">home | case studies | terminology</div>
             </div>
-
-            <div class="right-panel">
-                <div class="game-box">
-                    <h2 class="section-title">MED_VOCAB_GAME.EXE</h2>
-                    
-                    <div class="game-card">
-                        <div class="question-container">
-                            <p class="prefix-term">root word: <span id="current-term">"erythro-"</span></p>
-                            <p class="instruction">select the correct clinical definition:</p>
-                        </div>
-
-                        <div class="options-container">
-                            <button class="game-btn" id="opt-a">a) relating to a nerve cell</button>
-                            <button class="game-btn" id="opt-b">b) denotes a red color state</button>
-                            <button class="game-btn" id="opt-c">c) inflammation of a joint</button>
-                            <button class="game-btn" id="opt-d">d) fluid buildup in tissue</button>
-                        </div>
-
-                        <div class="score-board">
-                            <span>score: <span id="score-val">00</span></span>
-                            <span>streak: <span id="streak-val">00</span></span>
-                        </div>
-                    </div>
-
+            
+            <div class="info-panel">
+                <h1 class="main-title">MED_DIARY! 🦇</h1>
+                <p class="system-handle">@medlitportal</p>
+                <p class="system-tags"><strong>academic project.</strong> public health exposure. medical history archive.</p>
+                
+                <div class="fact-text-container">
+                    <p class="container-header">WEEKLY MEDICAL FACT</p>
+                    <p class="fact-body">
+                        <strong>Fact:</strong> The human liver, the body's primary detoxification center, possesses a unique capacity for regeneration; even if 75% is surgically removed, it can completely rebuild itself, maintaining full metabolic function. A clinical wonder of biological resilience.
+                    </p>
                 </div>
             </div>
 
         </div>
 
-        <div class="player-bottom-bar">
-            <div class="media-buttons">
-                <button class="ctrl-btn" id="prevBtn">⏮</button>
-                <button class="play-btn" id="playPauseBtn">▶</button>
-                <button class="ctrl-btn" id="nextBtn">⏭</button>
-            </div>
-            <div class="progress-bar-container">
-                <div class="progress-bar"></div>
-            </div>
+        <div class="navigation-button-row">
+            <button class="menu-btn" onclick="alert('You are already home!')">home</button>
+            <button class="menu-btn" onclick="alert('Navigating to Medical Vocab Game page...')">medical vocab game</button>
+            <button class="menu-btn" onclick="alert('Navigating to Historical Events archive...')">historical events</button>
         </div>
 
     </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
