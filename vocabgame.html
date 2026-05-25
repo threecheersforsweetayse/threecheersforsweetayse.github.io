@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Med Diary - Vocab Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Game Specific Layout Extras */
+        .game-card {
+            border: 1px solid #ffffff;
+            background-color: #050505;
+            padding: 20px;
+            text-align: left;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .question-text {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #ffffff;
+            margin: 0 0 15px 0;
+        }
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .choice-btn {
+            background: #121212;
+            border: 1px solid #660708;
+            color: #c5c6c7;
+            font-family: "Courier New", Courier, monospace;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+        .choice-btn:hover {
+            border-color: #ba181b;
+            color: #ffffff;
+        }
+        .feedback-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 30px;
+        }
+        #feedback-message {
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        .next-btn {
+            background: #ba181b;
+            border: none;
+            color: #ffffff;
+            font-family: "Courier New", Courier, monospace;
+            padding: 5px 15px;
+            cursor: pointer;
+            font-size: 12px;
+            text-transform: lowercase;
+            display: none; /* Hidden until correct answer is picked */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="player-frame">
+        
+        <div class="player-title-bar">
+            <span class="title-text">MED DIARY - VOCAB_GAME.EXE</span>
+            <div class="window-controls">
+                <span>—</span>
+                <span>❑</span>
+                <span>X</span>
+            </div>
+        </div>
+
+        <div class="layout-row-top">
+            
+            <div class="visual-panel">
+                <div class="image-box">
+                    <img src="https://i.pinimg.com/736x/9e/0f/3f/9e0f3f39f5a3ec9724a9eeca63557bea.jpg" alt="Anatomical Heart Graphic" class="profile-pic">
+                </div>
+                <div class="panel-sublinks">home | case studies | terminology</div>
+            </div>
+            
+            <div class="info-panel">
+                <h1 class="main-title">CLINICAL_TERMINOLOGY! 🧠</h1>
+                <p class="system-tags"><strong>quiz module.</strong> diagnostic proficiency evaluation stream.</p>
+                
+                <div class="game-card">
+                    <div>
+                        <p class="container-header" id="question-number">QUESTION 1 OF 3</p>
+                        <p class="question-text" id="definition-display">Loading definition analysis...</p>
+                    </div>
+
+                    <div class="options-grid">
+                        <button class="choice-btn" onclick="checkAnswer(0)" id="opt0">Option 1</button>
+                        <button class="choice-btn" onclick="checkAnswer(1)" id="opt1">Option 2</button>
+                        <button class="choice-btn" onclick="checkAnswer(2)" id="opt2">Option 3</button>
+                        <button class="choice-btn" onclick="checkAnswer(3)" id="opt3">Option 4</button>
+                    </div>
+
+                    <div class="feedback-container">
+                        <span id="feedback-message"></span>
+                        <button class="next-btn" id="next-question-btn" onclick="loadNextQuestion()">next question →</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="navigation-button-row">
+            <a href="index.html" class="menu-btn">home</a>
+            <a href="vocab.html" class="menu-btn">medical vocab game</a>
+            <a href="#" class="menu-btn" onclick="alert('Navigating to Historical Events archive...')">historical events</a>
+            <a href="facts.html" class="menu-btn">past facts</a>
+        </div>
+
+    </div>
+
+    <script>
+        // Here is your question bank array! You can add more questions to this list anytime.
+        const quizDatabase = [
+            {
+                definition: "Relating to or affecting the liver; the primary physiological filtering system of the human body.",
+                choices: ["Cardiovascular", "Hepatic", "Renal", "Pulmonary"],
+                correct: 1 // Points to "Hepatic" (0=Cardiovascular, 1=Hepatic, 2=Renal, 3=Pulmonary)
+            },
+            {
+                definition: "The temporary or permanent restoration of tissue structure and physiological function following traumatic removal or damage.",
+                choices: ["Regeneration", "Atrophy", "Necrosis", "Sclerosis"],
+                correct: 0 // Points to "Regeneration"
+            },
+            {
+                definition: "Pertaining to the heart and the network of blood vessels responsible for systematic circulation pressure mechanics.",
+                choices: ["Gastric", "Neurological", "Cardiovascular", "Dermatological"],
+                correct: 2 // Points to "Cardiovascular"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+
+        function initGame() {
+            const currentData = quizDatabase[currentQuestionIndex];
+            
+            // Set question counter header and definition text
+            document.getElementById("question-number").innerText = `QUESTION ${currentQuestionIndex + 1} OF ${quizDatabase.length}`;
+            document.getElementById("definition-display").innerText = currentData.definition;
+            
+            // Populate text fields inside the option layout nodes
+            for (let i = 0; i < 4; i++) {
+                const button = document.getElementById(`opt${i}`);
+                button.innerText = currentData.choices[i];
+                button.disabled = false; // Reset buttons to active status
+                button.style.backgroundColor = "#121212"; // Reset option colors back to flat gray
+                button.style.borderColor = "#660708";
+            }
+            
+            // Hide the next step controller action layer and clear active log tags
+            document.getElementById("feedback-message").innerText = "";
+            document.getElementById("next-question-btn").style.display = "none";
+        }
+
+        function checkAnswer(selectedIndex) {
+            const currentData = quizDatabase[currentQuestionIndex];
+            const feedbackText = document.getElementById("feedback-message");
+            
+            if (selectedIndex === currentData.correct) {
+                // Correct Answer Selected Action Pipeline
+                feedbackText.innerText = "✓ CORRECT!";
+                feedbackText.style.color = "#00ff00"; // Bright clinical neon green
+                
+                // Color the correct choice background green
+                document.getElementById(`opt${selectedIndex}`).style.backgroundColor = "#002b00";
+                document.getElementById(`opt${selectedIndex}`).style.borderColor = "#00ff00";
+                
+                // Lock down choice buttons so user can't click other options after winning
+                for (let i = 0; i < 4; i++) {
+                    document.getElementById(`opt${i}`).disabled = true;
+                }
+                
+                // Show the next question action bridge
+                document.getElementById("next-question-btn").style.display = "block";
+            } else {
+                // Incorrect Answer Selected Action Pipeline
+                feedbackText.innerText = "❌ WRONG, TRY AGAIN.";
+                feedbackText.style.color = "#ba181b"; // Deep clinical emergency red
+                
+                // Highlight the specific wrong button clicked to track attempts
+                document.getElementById(`opt${selectedIndex}`).style.backgroundColor = "#2b0000";
+                document.getElementById(`opt${selectedIndex}`).style.borderColor = "#ba181b";
+            }
+        }
+
+        function loadNextQuestion() {
+            currentQuestionIndex++;
+            
+            // Loop array processing cycle checks to handle final game completion routes
+            if (currentQuestionIndex < quizDatabase.length) {
+                initGame();
+            } else {
+                // End Game Protocol: Clear dashboard panels and offer reboot routine options
+                document.getElementById("question-number").innerText = "SIMULATION COMPLETE";
+                document.getElementById("definition-display").innerText = "All vocabulary data modules successfully verified. Diagnostic evaluation complete.";
+                document.getElementById("options-grid").style.display = "none";
+                document.getElementById("feedback-message").innerText = "🏆 100% SUCCESS RATE";
+                document.getElementById("feedback-message").style.color = "#00ff00";
+                
+                // Change "next question" button to an engine reload command button
+                const actionBtn = document.getElementById("next-question-btn");
+                actionBtn.innerText = "restart simulation";
+                actionBtn.onclick = function() {
+                    currentQuestionIndex = 0;
+                    document.getElementById("options-grid").style.display = "grid";
+                    actionBtn.onclick = loadNextQuestion; // Reset behavior path logic rules
+                    initGame();
+                };
+            }
+        }
+
+        // Auto execute boot script payload sequence upon layout node compilation
+        window.onload = initGame;
+    </script>
+</body>
+</html>
