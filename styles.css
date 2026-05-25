@@ -131,7 +131,7 @@ body {
 /* 8. Bottom Horizontal Navigation Button Row */
 .navigation-button-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Splits row into 3 equal wide button tabs */
+    grid-template-columns: repeat(4, 1fr); /* CHANGED FROM 3 TO 4 Columns */
     border-top: 2px solid #660708;
 }
 
