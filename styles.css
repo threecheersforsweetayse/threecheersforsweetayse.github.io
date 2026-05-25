@@ -1,42 +1,151 @@
-/* 1. The Background - Deepest Emo Black */
+/* 1. Global Screen Setup */
 body {
-    background-color: #0b0c10; /* Pitch dark slate black */
-    color: #c5c6c7;            /* Muted, cold silver text */
+    background-color: #0b0c10; /* Pitch dark slate black background */
     font-family: "Courier New", Courier, monospace; /* Sharp retro font */
+    color: #ffffff;
+    
+    /* The Centering Engine */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    justify-content: center;   /* Centers horizontally */
+    align-items: center;       /* Centers vertically */
+    min-height: 100vh;         /* Stretches screen so vertical centering works */
     margin: 0;
 }
 
-/* 2. The Main Container Box (The Profile Box) */
-.app {
-    background-color: #1f2833; /* Dark icy charcoal gray */
-    border: 2px solid #660708;  /* Deep, bruised vampire-cherry red border */
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0px 0px 20px #000000; /* Heavy, dark shadow underneath */
-    width: 300px;
+/* 2. The Main Windows Media Player Frame Box */
+.player-frame {
+    background-color: #000000; /* Pure black interior background */
+    border: 3px solid #660708;   /* Deep, bruised vampire-cherry red frame border */
+    width: 650px;              /* Wide frame to allow side-by-side splitting */
+    box-shadow: 0px 0px 25px #000000; /* Heavy dark shadow drop */
 }
 
-/* 3. The Custom Emo Button */
-#testBtn {
-    background-color: #0b0c10; /* Black button background */
-    color: #ba181b;            /* Deep cherry red text */
-    border: 1px solid #660708; /* Dark red outline */
-    font-family: "Courier New", Courier, monospace;
+/* 3. The Title Bar (Top Header Row) */
+.player-title-bar {
+    background: linear-gradient(180deg, #8b0000, #4a0000); /* Glossy dark-red header */
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between; /* Pushes text to left, controls to right */
+    align-items: center;
+    border-bottom: 2px solid #660708;
+    font-size: 12px;
     font-weight: bold;
-    padding: 10px 20px;
-    cursor: pointer;
-    text-transform: lowercase; /* In 2007, typing in all lowercase was peak emo aesthetic */
     letter-spacing: 1px;
 }
 
-/* Button Hover Effect (Flashes Frost Blue when hovered) */
-#testBtn:hover {
-    background-color: #ba181b; /* Turns deep red */
-    color: #ffffff;            /* White text */
-    border-color: #a8dadc;     /* Pops with a sharp, pale ice-blue border */
-    box-shadow: 0px 0px 10px #ba181b; /* Deep red neon glow */
+.window-controls span {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* 4. The Two-Column Split Engine */
+.layout-row-top {
+    display: grid;
+    grid-template-columns: 240px 1fr; /* Left panel is 240px, right panel fills rest */
+    gap: 20px;                         /* Crisp space buffer between the columns */
+    padding: 20px;
+}
+
+/* 5. Left Column Layout (Image & Links) */
+.visual-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.image-box {
+    background-color: #121212;
+    border: 1px solid #660708; /* Thin dark red line around visual container */
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.placeholder-graphic {
+    color: #660708;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.panel-sublinks {
+    font-size: 11px;
+    text-align: center;
+    color: #ba181b; /* Accent red for text navigation links */
+}
+
+/* 6. Right Column Layout (Titles & Fact Container) */
+.info-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title {
+    color: #ba181b; /* Vibrant cherry red header text */
+    font-size: 24px;
+    margin: 0 0 5px 0;
+    letter-spacing: 1px;
+}
+
+.system-tags {
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 0 0 20px 0;
+    color: #c5c6c7; /* Silver grey metadata description font */
+}
+
+/* 7. The White-Border Fact Box Container */
+.fact-text-container {
+    border: 1px solid #ffffff; /* Crisp white line outline box */
+    padding: 15px;
+    background-color: #050505; /* Near pure-black internal box space */
+    text-align: left;
+}
+
+.container-header {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+}
+
+.fact-body {
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0;
+    color: #ffffff;
+}
+
+/* 8. Bottom Horizontal Navigation Button Row */
+.navigation-button-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Splits row into 3 equal wide button tabs */
+    border-top: 2px solid #660708;
+}
+
+.menu-btn {
+    background: linear-gradient(180deg, #4a0000, #250000); /* Vampire red gradient look */
+    border: none;
+    border-right: 1px solid #660708; /* Border separator line between individual tabs */
+    color: #ffffff;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    padding: 15px 0;
+    cursor: pointer;
+    text-transform: lowercase; /* Keeps it strictly retro MySpace-coded */
+    letter-spacing: 1px;
+    transition: background 0.2s;
+}
+
+/* Removes the extra border lines on the very last button tab element */
+.menu-btn:last-child {
+    border-right: none;
+}
+
+/* Button Hover Flash Interactivity Rule */
+.menu-btn:hover {
+    background: #ba181b; /* Lights up bright red when mouse touches it */
 }
