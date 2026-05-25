@@ -53,15 +53,25 @@ body {
     gap: 10px;
 }
 
+/* 5b. Image Border-Box Formatting */
 .image-box {
     background-color: #121212;
-    border: 1px solid #660708; /* Thin dark red line around visual container */
+    border: 1px solid #660708; 
     height: 240px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 10px;
+    padding: 0; /* CHANGED to 0 so the image hits the edges flush */
+    overflow: hidden; /* Prevents a large image from leaking outside the border */
+}
+
+/* New Image Controller Rule */
+.profile-pic {
+    width: 100%;        /* Forces image to stretch to the exact width of the box */
+    height: 100%;       /* Forces image to stretch to the exact height of the box */
+    object-fit: cover;  /* Crops the image perfectly center without squishing the dimensions */
+}
 }
 
 .placeholder-graphic {
