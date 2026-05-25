@@ -147,6 +147,11 @@ body {
     text-transform: lowercase; /* Keeps it strictly retro MySpace-coded */
     letter-spacing: 1px;
     transition: background 0.2s;
+    
+    /* THE FIXES TO FORCE THE ANCHOR TO SHOW UP: */
+    display: block;         /* Forces the <a> tag to behave like a solid block box */
+    text-decoration: none;  /* Strips out the default browser link underline */
+    text-align: center;     /* Keeps text perfectly centered inside the grid column */
 }
 
 /* Removes the extra border lines on the very last button tab element */
